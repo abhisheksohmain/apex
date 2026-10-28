@@ -1,0 +1,11 @@
+.footer{background:linear-gradient(180deg,var(--navy),var(--navy2));color:#c9d1e4;padding-top:80px;border-top:4px solid var(--gold)}
+.ft-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.4fr;gap:40px;padding-bottom:50px}
+.ft-logo{background:#fff;display:inline-block;padding:10px 16px;border-radius:14px;margin-bottom:18px}
+.ft-logo img{height:60px}
+.footer h4{color:var(--gold2);font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:18px}
+.footer a{display:flex;align-items:center;gap:10px;padding:5px 0;font-size:.92rem;transition:.3s}
+.footer a:hover{color:var(--gold2);transform:translateX(6px)}
+.footer a svg{color:var(--gold);flex-shrink:0}
+.ft-bottom{border-top:1px solid rgba(255,255,255,.1);text-align:center;padding:20px;font-size:.85rem}
+@media(max-width:900px){.ft-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.ft-grid{grid-template-columns:1fr}}

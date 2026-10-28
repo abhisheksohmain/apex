@@ -1,0 +1,4 @@
+.pb{background-size:cover;background-position:center;background-attachment:fixed;text-align:center;padding:110px 0;color:#fff}
+.pb h1{color:#fff;font-size:clamp(2.2rem,5vw,3.6rem)}
+.pb p{color:#d5dcee;margin-top:10px}.pb a:hover{color:var(--gold2)}.pb span{color:var(--gold2)}
+@media(max-width:900px){.pb{background-attachment:scroll}}

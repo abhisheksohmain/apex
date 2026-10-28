@@ -1,0 +1,5 @@
+.cta{background-size:cover;background-position:center;background-attachment:fixed;text-align:center;padding:110px 0;color:#fff}
+.cta h2{color:#fff;font-size:clamp(2rem,4.5vw,3.2rem)}.cta h2 span{color:var(--gold2)}
+.cta p{color:#d5dcee;margin:14px 0 32px}
+.cta-b{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+@media(max-width:900px){.cta{background-attachment:scroll}}

@@ -1,0 +1,16 @@
+.hero{background-size:cover;background-position:center;background-attachment:fixed;color:#fff;min-height:calc(100vh - 120px);display:flex;align-items:center;padding:70px 0}
+.hero-in{display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:center}
+.hero h1{color:#fff;font-size:clamp(2.4rem,5.2vw,4.1rem);margin:10px 0 20px}
+.hero h1 span{background:linear-gradient(90deg,var(--gold),var(--gold2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{max-width:560px;color:#d5dcee;font-size:1.05rem}
+.hero ul{list-style:none;margin:22px 0 34px}
+.hero li{display:flex;gap:10px;align-items:center;padding:3px 0}.hero li svg{color:var(--gold)}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap}
+.hero-img{position:relative;justify-self:center;max-width:400px;animation:float 5s ease-in-out infinite}
+.frame{position:relative;border-radius:var(--r)}
+.frame::before{content:'';position:absolute;inset:22px -22px -22px 22px;border:3px solid var(--gold);border-radius:var(--r);z-index:-1}
+.frame img{border-radius:var(--r);box-shadow:0 30px 60px rgba(0,0,0,.5);-webkit-box-reflect:below 6px linear-gradient(transparent 80%,rgba(255,255,255,.18))}
+.badge{position:absolute;left:-30px;bottom:70px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);font:700 2.4rem 'Playfair Display';border-radius:16px;padding:12px 22px;text-align:center;box-shadow:0 14px 30px rgba(0,0,0,.4)}
+.badge small{display:block;font:600 .7rem 'Poppins'}
+@keyframes float{50%{transform:translateY(-14px)}}
+@media(max-width:900px){.hero{background-attachment:scroll}.hero-in{grid-template-columns:1fr}.hero-img{max-width:300px;margin-bottom:30px}.badge{left:-10px}}

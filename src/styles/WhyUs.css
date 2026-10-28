@@ -1,0 +1,8 @@
+.why{background-size:cover;background-position:center;background-attachment:fixed;padding:100px 0;color:#fff}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px}
+.why-card{background:rgba(255,255,255,.07);border:1px solid rgba(236,210,122,.3);border-radius:var(--r);padding:36px 26px;text-align:center;backdrop-filter:blur(8px);transition:transform .4s,background .4s,opacity .8s}
+.why-card:hover{transform:translateY(-10px);background:rgba(201,162,39,.16)}
+.why-card svg{font-size:2.4rem;color:var(--gold2);margin-bottom:14px}
+.why-card h3{color:#fff;font-size:1.2rem;margin-bottom:8px}
+.why-card p{color:#cfd7ea;font-size:.92rem}
+@media(max-width:900px){.why{background-attachment:scroll}}
