@@ -19,6 +19,6 @@ a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
 .btn::after,.shine::after{content:'';position:absolute;top:0;left:-120%;width:60%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);transition:.7s;pointer-events:none}
 .btn:hover::after,.shine:hover::after{left:140%}
 .shine{position:relative;overflow:hidden}
-.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease}
-.reveal.in{opacity:1;transform:none}
+.js .reveal{opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease}
+.js .reveal.in{opacity:1;transform:none}
 @media(max-width:700px){.section{padding:70px 0}}

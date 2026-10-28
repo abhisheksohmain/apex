@@ -1,12 +1,16 @@
 import { useEffect } from 'react'
-// adds .in to every .reveal element when it scrolls into view
+// Scroll-reveal. Content is ALWAYS visible by default; animation only runs when JS is ready,
+// and a fallback timer force-shows anything still hidden (so no page can ever stay blank).
 export function useReveal() {
   useEffect(() => {
+    const els = document.querySelectorAll('.reveal:not(.in)')
+    if (!('IntersectionObserver' in window)) { els.forEach((e) => e.classList.add('in')); return }
     const io = new IntersectionObserver(
-      (es) => es.forEach((e) => e.isIntersecting && (e.target.classList.add('in'), io.unobserve(e.target))),
-      { threshold: 0.12 }
+      (es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target) } }),
+      { threshold: 0.05, rootMargin: '0px 0px -40px 0px' }
     )
-    document.querySelectorAll('.reveal').forEach((el) => io.observe(el))
-    return () => io.disconnect()
+    els.forEach((el) => io.observe(el))
+    const t = setTimeout(() => document.querySelectorAll('.reveal:not(.in)').forEach((e) => e.classList.add('in')), 1800)
+    return () => { io.disconnect(); clearTimeout(t) }
   })
 }
