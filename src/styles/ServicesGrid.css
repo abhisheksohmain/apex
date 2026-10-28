@@ -1,13 +1,351 @@
-.sv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
-.sv-card{background:#fff;border-radius:var(--r);box-shadow:0 10px 35px rgba(10,31,68,.08);transition:transform .4s,box-shadow .4s,opacity .8s}
-.sv-card:hover{transform:translateY(-12px);box-shadow:0 28px 55px rgba(10,31,68,.22)}
-.sv-img{height:200px;overflow:hidden}
-.sv-img img{width:100%;height:100%;object-fit:cover;transition:.7s}
-.sv-card:hover .sv-img img{transform:scale(1.12)}
-.sv-ic{position:absolute;top:170px;right:22px;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--navy),#16346e);color:var(--gold2);display:grid;place-items:center;font-size:1.4rem;border:3px solid #fff;transition:.5s;z-index:2}
-.sv-card:hover .sv-ic{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);transform:rotateY(360deg)}
-.sv-body{padding:30px 24px 26px}
-.sv-body h3{font-size:1.25rem;margin-bottom:8px}
-.sv-body p{color:var(--mut);font-size:.92rem;margin-bottom:14px}
-.sv-body a{color:var(--gold);font-weight:600;display:inline-flex;gap:8px;align-items:center;transition:.3s}
-.sv-body a:hover{gap:14px}
+
+/* =====================================================
+   SERVICES GRID
+   Fully Responsive | Navy + Gold Theme
+===================================================== */
+
+.sv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  width: 100%;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   SERVICE CARD
+===================================================== */
+
+.sv-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
+
+  background: #ffffff;
+  border-radius: var(--r);
+  overflow: hidden;
+
+  box-shadow: 0 10px 35px rgba(10, 31, 68, 0.08);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    opacity 0.8s ease;
+}
+
+.sv-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(10, 31, 68, 0.18);
+}
+
+/* =====================================================
+   SERVICE IMAGE
+   Full image visible - no cropping
+===================================================== */
+
+.sv-img {
+  position: relative;
+  display: block;
+
+  width: 100%;
+  height: auto;
+  min-height: 0;
+
+  aspect-ratio: auto;
+  padding: 0;
+  margin: 0;
+
+  overflow: hidden;
+  background: #ffffff;
+
+  box-sizing: border-box;
+  flex: 0 0 auto;
+}
+
+.sv-img img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  max-width: 100%;
+  max-height: none;
+
+  object-fit: contain;
+  object-position: center center;
+
+  margin: 0;
+  padding: 0;
+  border: 0;
+
+  box-sizing: border-box;
+
+  /* Disable image zoom to prevent cropping */
+  transform: none;
+  transition: none;
+}
+
+/* Keep complete image visible on hover */
+
+.sv-card:hover .sv-img img {
+  transform: none;
+}
+
+/* =====================================================
+   SERVICE ICON
+===================================================== */
+
+.sv-ic {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+  place-items: center;
+
+  width: 54px;
+  height: 54px;
+  min-width: 54px;
+  box-sizing: border-box;
+
+  margin: -27px 20px 0 auto;
+
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+
+  background: linear-gradient(
+    135deg,
+    var(--navy),
+    #16346e
+  );
+
+  color: var(--gold2);
+  font-size: 1.35rem;
+
+  transition:
+    background 0.4s ease,
+    color 0.4s ease,
+    transform 0.5s ease;
+}
+
+.sv-card:hover .sv-ic {
+  background: linear-gradient(
+    135deg,
+    var(--gold),
+    var(--gold2)
+  );
+
+  color: var(--navy);
+  transform: rotateY(360deg);
+}
+
+/* =====================================================
+   SERVICE CONTENT
+   Always below the image
+===================================================== */
+
+.sv-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  flex: 1 1 auto;
+  min-width: 0;
+
+  padding: 8px 24px 26px;
+  box-sizing: border-box;
+  background: #ffffff;
+}
+
+.sv-body h3 {
+  width: 100%;
+  margin: 0 0 10px;
+
+  color: var(--navy);
+  font-size: 1.25rem;
+  line-height: 1.4;
+
+  overflow-wrap: anywhere;
+}
+
+.sv-body p {
+  width: 100%;
+  margin: 0 0 18px;
+
+  color: var(--mut);
+  font-size: 0.92rem;
+  line-height: 1.7;
+
+  overflow-wrap: anywhere;
+}
+
+/* =====================================================
+   BOOK NOW LINK
+===================================================== */
+
+.sv-body a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-top: auto;
+  padding-top: 4px;
+
+  color: var(--gold);
+  font-weight: 600;
+  line-height: 1.5;
+  text-decoration: none;
+
+  transition:
+    gap 0.3s ease,
+    color 0.3s ease;
+}
+
+.sv-body a:hover {
+  gap: 13px;
+  color: var(--navy);
+}
+
+/* =====================================================
+   LARGE DESKTOP
+===================================================== */
+
+@media (min-width: 1400px) {
+  .sv-grid {
+    gap: 32px;
+  }
+
+  .sv-body {
+    padding: 8px 28px 28px;
+  }
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+  .sv-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .sv-body {
+    padding: 8px 22px 24px;
+  }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+  .sv-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+  }
+
+  .sv-card {
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    margin-inline: auto;
+  }
+
+  .sv-img {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: auto;
+  }
+
+  .sv-img img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  .sv-ic {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+
+    margin-top: -25px;
+    margin-right: 16px;
+
+    font-size: 1.2rem;
+  }
+
+  .sv-body {
+    padding: 8px 20px 24px;
+  }
+
+  .sv-body h3 {
+    font-size: 1.18rem;
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+
+  .sv-body p {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    margin-bottom: 15px;
+  }
+}
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 360px) {
+  .sv-grid {
+    gap: 18px;
+  }
+
+  .sv-card {
+    border-radius: 12px;
+  }
+
+  .sv-ic {
+    width: 46px;
+    height: 46px;
+    min-width: 46px;
+
+    margin-top: -23px;
+    margin-right: 14px;
+
+    font-size: 1.1rem;
+  }
+
+  .sv-body {
+    padding: 8px 16px 20px;
+  }
+
+  .sv-body h3 {
+    font-size: 1.08rem;
+  }
+
+  .sv-body p {
+    font-size: 0.86rem;
+  }
+}
+
+/* =====================================================
+   ACCESSIBILITY
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .sv-card,
+  .sv-img img,
+  .sv-ic,
+  .sv-body a {
+    transition: none !important;
+  }
+
+  .sv-card:hover {
+    transform: none;
+  }
+}

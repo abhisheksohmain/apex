@@ -1,16 +1,419 @@
-.hero{background-size:cover;background-position:center;background-attachment:fixed;color:#fff;min-height:calc(100vh - 120px);display:flex;align-items:center;padding:70px 0}
-.hero-in{display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:center}
-.hero h1{color:#fff;font-size:clamp(2.4rem,5.2vw,4.1rem);margin:10px 0 20px}
-.hero h1 span{background:linear-gradient(90deg,var(--gold),var(--gold2));-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p{max-width:560px;color:#d5dcee;font-size:1.05rem}
-.hero ul{list-style:none;margin:22px 0 34px}
-.hero li{display:flex;gap:10px;align-items:center;padding:3px 0}.hero li svg{color:var(--gold)}
-.hero-btns{display:flex;gap:16px;flex-wrap:wrap}
-.hero-img{position:relative;justify-self:center;max-width:400px;animation:float 5s ease-in-out infinite}
-.frame{position:relative;border-radius:var(--r)}
-.frame::before{content:'';position:absolute;inset:22px -22px -22px 22px;border:3px solid var(--gold);border-radius:var(--r);z-index:-1}
-.frame img{border-radius:var(--r);box-shadow:0 30px 60px rgba(0,0,0,.5);-webkit-box-reflect:below 6px linear-gradient(transparent 80%,rgba(255,255,255,.18))}
-.badge{position:absolute;left:-30px;bottom:70px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);font:700 2.4rem 'Playfair Display';border-radius:16px;padding:12px 22px;text-align:center;box-shadow:0 14px 30px rgba(0,0,0,.4)}
-.badge small{display:block;font:600 .7rem 'Poppins'}
-@keyframes float{50%{transform:translateY(-14px)}}
-@media(max-width:900px){.hero{background-attachment:scroll}.hero-in{grid-template-columns:1fr}.hero-img{max-width:300px;margin-bottom:30px}.badge{left:-10px}}
+
+/* =====================================================
+   HERO SECTION
+   Responsive | Navy + Gold Theme
+===================================================== */
+
+.hero {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #ffffff;
+
+  min-height: calc(100vh - 120px);
+  display: flex;
+  align-items: center;
+
+  padding: 55px 0 65px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.hero-in {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: 42px;
+  align-items: center;
+  width: 100%;
+}
+
+/* =====================================================
+   MAIN HEADING - MAXIMUM 2 LINES
+===================================================== */
+
+.hero h1 {
+  color: #ffffff;
+
+  font-size: clamp(2.2rem, 4.2vw, 3.8rem);
+  line-height: 1.12;
+  letter-spacing: -0.8px;
+  font-weight: 700;
+
+  max-width: 650px;
+  margin: 8px 0 16px;
+
+  text-wrap: balance;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.hero h1 span {
+  background: linear-gradient(
+    90deg,
+    var(--gold),
+    var(--gold2)
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Optional: use this class on the exact heading line break */
+.hero h1 .heading-line {
+  display: block;
+}
+
+/* =====================================================
+   HERO DESCRIPTION
+===================================================== */
+
+.hero p {
+  max-width: 540px;
+  margin: 0 0 16px;
+
+  color: #d5dcee;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+/* =====================================================
+   HERO TAGS / LIST ITEMS
+   Reduced unnecessary spacing
+===================================================== */
+
+.hero ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+
+  list-style: none;
+  margin: 16px 0 22px;
+  padding: 0;
+}
+
+.hero li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 2px 0;
+  margin: 0;
+
+  color: #ffffff;
+  font-size: 0.94rem;
+  line-height: 1.45;
+}
+
+.hero li svg {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  color: var(--gold);
+}
+
+/* =====================================================
+   HERO BUTTONS
+===================================================== */
+
+.hero-btns {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.hero-btns a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 46px;
+  box-sizing: border-box;
+  padding: 11px 22px;
+
+  border-radius: 30px;
+  text-align: center;
+  text-decoration: none;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background-position 0.4s ease;
+}
+
+.hero-btns a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.22);
+}
+
+/* =====================================================
+   HERO IMAGE
+===================================================== */
+
+.hero-img {
+  position: relative;
+  justify-self: center;
+
+  width: 100%;
+  max-width: 400px;
+
+  animation: float 5s ease-in-out infinite;
+}
+
+.frame {
+  position: relative;
+  border-radius: var(--r);
+  isolation: isolate;
+}
+
+.frame::before {
+  content: "";
+  position: absolute;
+
+  inset: 18px -16px -18px 16px;
+
+  border: 3px solid var(--gold);
+  border-radius: var(--r);
+
+  z-index: -1;
+  pointer-events: none;
+}
+
+.frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+
+  border-radius: var(--r);
+  box-shadow: 0 25px 55px rgba(0, 0, 0, 0.4);
+
+  -webkit-box-reflect: below 5px
+    linear-gradient(
+      transparent 82%,
+      rgba(255, 255, 255, 0.12)
+    );
+}
+
+/* =====================================================
+   FLOATING BADGE
+===================================================== */
+
+.badge {
+  position: absolute;
+  left: -18px;
+  bottom: 55px;
+  z-index: 2;
+
+  padding: 11px 18px;
+
+  background: linear-gradient(
+    135deg,
+    var(--gold),
+    var(--gold2)
+  );
+
+  color: var(--navy);
+  font: 700 2rem "Playfair Display", serif;
+
+  text-align: center;
+  border-radius: 14px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+}
+
+.badge small {
+  display: block;
+  margin-top: 3px;
+
+  font: 600 0.7rem "Poppins", sans-serif;
+}
+
+/* =====================================================
+   FLOAT ANIMATION
+===================================================== */
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+  .hero {
+    min-height: auto;
+    background-attachment: scroll;
+    padding: 55px 0 65px;
+  }
+
+  .hero-in {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+    gap: 30px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4.3vw, 3rem);
+    line-height: 1.14;
+  }
+
+  .hero-img {
+    max-width: 330px;
+  }
+
+  .badge {
+    left: -8px;
+    bottom: 40px;
+    font-size: 1.7rem;
+    padding: 10px 15px;
+  }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 760px) {
+  .hero {
+    min-height: auto;
+    padding: 42px 0 50px;
+    background-attachment: scroll;
+    background-position: center;
+  }
+
+  .hero-in {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .hero h1 {
+    max-width: 560px;
+    font-size: clamp(2rem, 6.5vw, 2.8rem);
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    margin: 8px 0 14px;
+  }
+
+  .hero p {
+    max-width: 100%;
+    font-size: 0.96rem;
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  .hero ul {
+    gap: 5px;
+    margin: 14px 0 20px;
+  }
+
+  .hero li {
+    gap: 8px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .hero-btns {
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  .hero-btns a {
+    padding: 11px 18px;
+    min-height: 44px;
+  }
+
+  .hero-img {
+    width: calc(100% - 20px);
+    max-width: 330px;
+    margin: 0 auto 15px;
+  }
+
+  .frame::before {
+    inset: 14px -10px -14px 10px;
+  }
+
+  .badge {
+    left: -8px;
+    bottom: 35px;
+    font-size: 1.55rem;
+    padding: 9px 14px;
+  }
+
+  .badge small {
+    font-size: 0.65rem;
+  }
+}
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+  .hero {
+    padding: 32px 0 42px;
+  }
+
+  .hero-in {
+    gap: 26px;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.8rem, 8vw, 2.2rem);
+    line-height: 1.16;
+    letter-spacing: -0.4px;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .hero li {
+    font-size: 0.86rem;
+  }
+
+  .hero-btns {
+    gap: 8px;
+  }
+
+  .hero-btns a {
+    padding: 10px 15px;
+    font-size: 0.86rem;
+  }
+
+  .hero-img {
+    max-width: 280px;
+  }
+
+  .badge {
+    left: -5px;
+    bottom: 25px;
+    font-size: 1.35rem;
+    padding: 8px 12px;
+  }
+}
+
+/* =====================================================
+   ACCESSIBILITY
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-img {
+    animation: none;
+  }
+
+  .hero-btns a {
+    transition: none;
+  }
+}

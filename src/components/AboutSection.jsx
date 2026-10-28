@@ -11,7 +11,7 @@ export default function AboutSection() {
       <div className="container ab-grid">
         <div className="ab-imgs reveal">
           <img className="big shine" src={img('office.jpg')} alt="Lion Apex office" />
-          <img className="small shine" src={img('carpentry.jpg')} alt="Carpentry work" />
+          {/* <img className="small shine" src={img('carpentry.jpg')} alt="Carpentry work" /> */}
           <div className="ab-exp">Dubai<small>Based Team</small></div>
         </div>
         <div className="reveal">

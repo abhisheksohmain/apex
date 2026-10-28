@@ -21,7 +21,7 @@ export default function Hero() {
         </div>
         <div className="hero-img">
           <div className="frame"><img src={img('hero.jpg')} alt="Lion Apex site engineer" /></div>
-          <div className="badge">8<small>Core Services</small></div>
+          {/* <div className="badge">8<small>Core Services</small></div> */}
         </div>
       </div>
     </section>

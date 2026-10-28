@@ -1,12 +1,227 @@
-.ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
-.ct-box{display:flex;gap:18px;align-items:center;background:#fff;padding:18px 22px;border-radius:var(--r);margin-bottom:14px;box-shadow:0 8px 25px rgba(10,31,68,.08);transition:.4s}
-.ct-box:hover{transform:translateX(10px);box-shadow:0 14px 35px rgba(10,31,68,.18)}
-.ct-box svg{font-size:1.3rem;color:var(--gold2);background:var(--navy);width:52px;height:52px;padding:14px;border-radius:50%;flex-shrink:0}
-.ct-box b{display:block;color:var(--navy)}.ct-box span{color:var(--mut);font-size:.9rem;word-break:break-word}
-.ct-form{background:#fff;padding:40px;border-radius:var(--r);box-shadow:0 20px 50px rgba(10,31,68,.15);border-top:5px solid var(--gold);display:flex;flex-direction:column;gap:16px}
-.ct-form input,.ct-form select,.ct-form textarea{padding:14px 18px;border:1.5px solid #dfe3ee;border-radius:12px;font:inherit;outline:0;transition:.3s}
-.ct-form input:focus,.ct-form select:focus,.ct-form textarea:focus{border-color:var(--gold);box-shadow:0 0 0 4px rgba(201,162,39,.18)}
-.ct-form button{justify-content:center}
-.ct-map{margin-top:60px}
-.ct-map iframe{width:100%;height:380px;border:0;border-radius:var(--r);box-shadow:0 20px 50px rgba(10,31,68,.2)}
-@media(max-width:900px){.ct-grid{grid-template-columns:1fr}.ct-form{padding:26px}}
+
+/* ==========================================
+   LION APEX - CONTACT SECTION
+   Navy + Gold Theme
+========================================== */
+
+/* Contact information + form layout */
+.ct-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: start;
+
+  /* Section spacing */
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+
+/* ==========================================
+   CONTACT INFORMATION BOXES
+========================================== */
+
+.ct-box {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  background: #fff;
+  padding: 18px 22px;
+  border-radius: var(--r);
+  margin-bottom: 14px;
+  box-shadow: 0 8px 25px rgba(10, 31, 68, 0.08);
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+  text-decoration: none;
+}
+
+.ct-box:hover {
+  transform: translateX(8px);
+  box-shadow: 0 14px 35px rgba(10, 31, 68, 0.18);
+}
+
+.ct-box svg {
+  font-size: 1.3rem;
+  color: var(--gold2);
+  background: var(--navy);
+  width: 52px;
+  height: 52px;
+  padding: 14px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.ct-box b {
+  display: block;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.ct-box span {
+  color: var(--mut);
+  font-size: 0.9rem;
+  word-break: break-word;
+}
+
+/* ==========================================
+   CONTACT FORM
+========================================== */
+
+.ct-form {
+  background: #fff;
+  padding: 40px;
+  border-radius: var(--r);
+  box-shadow: 0 20px 50px rgba(10, 31, 68, 0.15);
+  border-top: 5px solid var(--gold);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ct-form h3 {
+  color: var(--navy);
+  margin: 0 0 8px;
+  line-height: 1.4;
+}
+
+.ct-form label {
+  color: var(--navy);
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: -8px;
+}
+
+.ct-form input,
+.ct-form select,
+.ct-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 18px;
+  border: 1.5px solid #dfe3ee;
+  border-radius: 12px;
+  font: inherit;
+  color: var(--navy);
+  background: #fff;
+  outline: 0;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.ct-form input:focus,
+.ct-form select:focus,
+.ct-form textarea:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 4px rgba(201, 162, 39, 0.18);
+}
+
+.ct-form textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.ct-form button {
+  justify-content: center;
+  margin-top: 4px;
+  cursor: pointer;
+}
+
+/* ==========================================
+   GOOGLE MAP SECTION
+========================================== */
+
+.ct-map {
+  /* Extra gap after contact and form section */
+  margin-top: 65px;
+  margin-bottom: 30px;
+  padding-top: 10px;
+  padding-bottom: 25px;
+}
+
+.ct-map iframe {
+  display: block;
+  width: 100%;
+  height: 400px;
+  border: 0;
+  border-radius: var(--r);
+  box-shadow: 0 20px 50px rgba(10, 31, 68, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+.ct-map iframe:hover {
+  box-shadow: 0 24px 55px rgba(10, 31, 68, 0.25);
+}
+
+/* ==========================================
+   TABLET RESPONSIVE
+========================================== */
+
+@media (max-width: 900px) {
+  .ct-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-top: 25px;
+    padding-bottom: 20px;
+  }
+
+  .ct-form {
+    padding: 30px;
+  }
+
+  .ct-map {
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  .ct-map iframe {
+    height: 350px;
+  }
+}
+
+/* ==========================================
+   MOBILE RESPONSIVE
+========================================== */
+
+@media (max-width: 560px) {
+  .ct-grid {
+    gap: 24px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .ct-box {
+    gap: 13px;
+    padding: 15px;
+  }
+
+  .ct-box svg {
+    width: 46px;
+    height: 46px;
+    padding: 12px;
+    font-size: 1.15rem;
+  }
+
+  .ct-form {
+    padding: 22px 18px;
+    gap: 14px;
+  }
+
+  .ct-form input,
+  .ct-form select,
+  .ct-form textarea {
+    padding: 13px 14px;
+    font-size: 0.95rem;
+  }
+
+  .ct-map {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    padding-top: 5px;
+    padding-bottom: 15px;
+  }
+
+  .ct-map iframe {
+    height: 280px;
+    border-radius: 12px;
+  }
+}

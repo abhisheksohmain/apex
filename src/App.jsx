@@ -9,6 +9,7 @@ import Services from './pages/Services'
 import Gallery from './pages/Gallery'
 import Contact from './pages/Contact'
 
+
 function ScrollTop() {
   const { pathname } = useLocation()
   useEffect(() => { window.scrollTo(0, 0) }, [pathname])
